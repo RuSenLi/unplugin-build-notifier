@@ -1,4 +1,3 @@
-import { URL, fileURLToPath } from 'node:url'
 import { basename, dirname, join } from 'node:path'
 import { exec } from 'node:child_process'
 import { performance } from 'node:perf_hooks'
@@ -7,8 +6,7 @@ import { createUnplugin } from 'unplugin'
 import notifier from 'node-notifier'
 import type { Options } from './types'
 
-const __filename = fileURLToPath(new URL('./', import.meta.url))
-const __dirname = dirname(__filename)
+const dirPath = dirname(__dirname)
 
 export function startdir() {
   exec(`start "" "${__dirname}"`, (error, stdout, stderr) => {
@@ -27,9 +25,9 @@ function nodeNotifier({
   timeout = startdir,
 }: Options = {}) {
   notifier.notify({
-    title: `✨ ${basename(__dirname)}`,
-    message: `${message}\n${__dirname}`,
-    icon: iconPath || join(__filename, './icon/SpongeBob.jpg'),
+    title: `✨ ${basename(dirPath)}`,
+    message: `${message}\n${dirPath}`,
+    icon: iconPath || join(__dirname, './icon/SpongeBob.jpg'),
   })
   notifier.on('click', click)
 
