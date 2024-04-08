@@ -5,7 +5,7 @@
     "build": "vite build"
   },
   "devDependencies": {
-    "rollup-plugin-notify": "^1.1.0",
+    "unplugin-build-notifier": "workspace:^",
     "vite": "^5.0.4",
     "vite-plugin-inspect": "^0.8.1"
   }

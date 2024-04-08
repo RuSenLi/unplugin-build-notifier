@@ -1,5 +1,5 @@
 const { defineConfig } = require('@vue/cli-service')
-const BuildNotifier = require('../../src/webpack')
+const BuildNotifier = require('unplugin-build-notifier/webpack')
 
 module.exports = defineConfig({
   transpileDependencies: true,
