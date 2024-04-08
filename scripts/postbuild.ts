@@ -4,7 +4,7 @@ import { fileURLToPath } from 'node:url'
 import fg from 'fast-glob'
 import chalk from 'chalk'
 
-async function run() {
+async function cjs() {
   // fix cjs exports
   const files = await fg('*.cjs', {
     ignore: ['chunk-*'],
@@ -18,6 +18,24 @@ async function run() {
     code += 'exports.default = module.exports;'
     await fs.writeFile(file, code)
   }
+}
+async function esm() {
+  // fix esm path
+  const files = await fg('chunk-*.js', {
+    absolute: true,
+    cwd: resolve(dirname(fileURLToPath(import.meta.url)), '../dist'),
+  })
+  for (const file of files) {
+    console.log(chalk.cyan.inverse(' POST '), `Fix ${basename(file)}`)
+    let code = await fs.readFile(file, 'utf8')
+    code = code.replace(/import_meta\.url/g, 'import.meta.url')
+    await fs.writeFile(file, code)
+  }
+}
+
+function run() {
+  cjs()
+  esm()
 }
 
 run()
