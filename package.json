@@ -85,7 +85,7 @@
     "dist"
   ],
   "scripts": {
-    "build": "tsup && esno scripts/copyIcon.ts",
+    "build": "tsup",
     "dev": "tsup --watch src",
     "build:fix": "esno scripts/postbuild.ts",
     "lint": "eslint .",

@@ -27,7 +27,7 @@ function nodeNotifier({
   notifier.notify({
     title: `✨ ${basename(dirPath)}`,
     message: `${message}\n${dirPath}`,
-    icon: iconPath || join(__dirname, './icon/SpongeBob.jpg'),
+    icon: iconPath || join(__dirname, './SpongeBob.jpg'),
   })
   notifier.on('click', click)
 

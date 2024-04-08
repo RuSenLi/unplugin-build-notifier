@@ -9,5 +9,6 @@ export default <Options>{
   dts: true,
   cjsInterop: true,
   splitting: true,
+  publicDir: './src/public',
   onSuccess: 'npm run build:fix',
 }
