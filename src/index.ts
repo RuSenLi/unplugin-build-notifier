@@ -1,4 +1,4 @@
-import { basename, dirname, join, resolve } from 'node:path'
+import { basename, dirname, join, sep } from 'node:path'
 import { exec } from 'node:child_process'
 import { performance } from 'node:perf_hooks'
 import { fileURLToPath } from 'node:url'
@@ -8,9 +8,16 @@ import notifier from 'node-notifier'
 import type { Options } from './types'
 
 const __dirname = dirname(fileURLToPath(import.meta.url))
-const rootPath = resolve(__dirname, '../../../')
+const rootPath = findNodeModules(__dirname)
 
-export function startdir() {
+function findNodeModules(dir: string): string {
+  const pathArr = dir.split(sep)
+  const pnpmIndex = pathArr.lastIndexOf('.pnpm')
+  const nodeModuleIndex = pathArr.lastIndexOf('node_modules', pnpmIndex)
+  return join(...pathArr.slice(0, nodeModuleIndex))
+}
+
+function startdir() {
   exec(`start "" "${rootPath}"`, (error, stdout, stderr) => {
     if (error) {
       console.error(
