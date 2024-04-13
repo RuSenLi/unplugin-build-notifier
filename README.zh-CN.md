@@ -2,9 +2,7 @@
 
 [![NPM version](https://img.shields.io/npm/v/unplugin-build-notifier?color=a1b858&label=)](https://www.npmjs.com/package/unplugin-build-notifier)
 
-[English](README.md) | [中文](README.zh-CN.md)
-
-After the project is packaged using this plugin, you can receive system notification messages and execute some scripts according to the configuration (such as opening the file explorer in the current project root directory by default).
+使用该插件在项目打包完成后，可以收到系统通知消息并可按配置执行一些脚本（如默认打开当前项目根目录的文件资源管理器）。
 
 <br>
 
@@ -14,17 +12,17 @@ After the project is packaged using this plugin, you can receive system notifica
   </a>
 </p>
 
-###### Features
+###### 特点
 
-- 💚 High-priority system notifications, supported by [node-notifier](https://www.npmjs.com/package/node-notifier).
-- ✨ Automatically obtain the project name
-- 📂 Automatically open the file explorer
-- 🔧 Configurable messages and click behavior
-- 🚀 Get build time
-- ⚡️ Supports Vite, Webpack, Rspack, Vue CLI, Rollup, esbuild and more, powered by <a href="https://github.com/unjs/unplugin">unplugin</a>.
-- 🦾 Full TypeScript support.
+- 💚 高优先级的系统通知，由 [node-notifier](https://www.npmjs.com/package/node-notifier) 提供支持
+- ✨ 自动获取项目名称
+- 📂 自动打开文件资源管理器
+- 🔧 可配置的消息和点击行为
+- 🚀 获取构建时间
+- ⚡️ 支持 Vite、Webpack、Rspack、Vue CLI、Rollup、esbuild 等，由 <a href="https://github.com/unjs/unplugin">unplugin</a> 提供支持
+- 🦾 完全支持 TypeScript
 
-## Install
+## 安装
 
 ```bash
 npm i unplugin-build-notifier -D
@@ -32,7 +30,7 @@ yarn add unplugin-build-notifier -D
 pnpm add unplugin-build-notifier -D
 ```
 
-## Template Usage
+## 使用示例
 <details>
 <summary>Vite</summary><br>
 
@@ -134,31 +132,27 @@ build({
 
 ```ts
 /**
- * plugin options.
+ * 插件配置项。
  */
 interface Options {
   /**
-   * The message to display in the build notifier.
+   * 在构建通知器中显示的消息。
    */
   message?: string
 
   /**
-   * The path to the icon to display in the build notifier.
+   * 在构建通知器中显示的图标的路径。
    */
   iconPath?: string
 
   /**
-   * The callback function to execute when the build notifier is clicked.
+   * 当构建通知器被点击时执行的回调函数。
    */
   click?: () => void
 
   /**
-   * The callback function to execute when the build notifier times out.
+   * 当构建通知器超时时执行的回调函数。
    */
   timeout?: () => void
 }
 ```
-
-## Dependencies
-
-This project uses [node-notifier](https://www.npmjs.com/package/node-notifier) to send system notifications. Please ensure that your system supports this package to get the full functionality of our project.
