@@ -13,7 +13,7 @@
   "devDependencies": {
     "@vue/cli-plugin-babel": "~5.0.0",
     "@vue/cli-service": "~5.0.0",
-    "unplugin-build-notifier": "^0.1.1",
+    "unplugin-build-notifier": "^0.1.3",
     "vue-template-compiler": "^2.6.14"
   },
   "browserslist": [
