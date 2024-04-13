@@ -2,7 +2,7 @@
 
 [![NPM version](https://img.shields.io/npm/v/unplugin-build-notifier?color=a1b858&label=)](https://www.npmjs.com/package/unplugin-build-notifier)
 
-使用该插件在项目打包完成后，可以收到系统通知消息并可按配置执行一些脚本（如默认打开当前项目根目录的文件资源管理器）。
+在使用此插件完成项目打包后，您将收到系统通知，并可以根据配置执行一些脚本，例如默认打开当前项目根目录的文件资源管理器。
 
 <br>
 
