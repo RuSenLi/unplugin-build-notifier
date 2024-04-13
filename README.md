@@ -4,7 +4,7 @@
 
 [English](README.md) | [中文](README.zh-CN.md)
 
-After the project is packaged using this plugin, you can receive system notification messages and execute some scripts according to the configuration (such as opening the file explorer in the current project root directory by default).
+After packaging the project using this plugin, you will receive system notifications and can execute some scripts according to the configuration, such as opening the file explorer in the current project root directory by default.
 
 <br>
 
@@ -158,7 +158,3 @@ interface Options {
   timeout?: () => void
 }
 ```
-
-## Dependencies
-
-This project uses [node-notifier](https://www.npmjs.com/package/node-notifier) to send system notifications. Please ensure that your system supports this package to get the full functionality of our project.
