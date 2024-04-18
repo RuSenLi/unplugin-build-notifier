@@ -2,6 +2,7 @@ import { basename, dirname, join, sep } from 'node:path'
 import { exec } from 'node:child_process'
 import { performance } from 'node:perf_hooks'
 import { fileURLToPath } from 'node:url'
+import { platform } from 'node:os'
 import type { UnpluginFactory } from 'unplugin'
 import { createUnplugin } from 'unplugin'
 import notifier from 'node-notifier'
@@ -17,8 +18,19 @@ function findNodeModules(dir: string): string {
   return join(...pathArr.slice(0, nodeModuleIndex))
 }
 
+function getOpenCommand() {
+  switch (platform()) {
+    case 'darwin':
+      return 'open'
+    case 'win32':
+      return 'start'
+    default:
+      return 'xdg-open'
+  }
+}
+
 function startdir() {
-  exec(`start "" "${rootPath}"`, (error, stdout, stderr) => {
+  exec(`${getOpenCommand()} "" "${rootPath}"`, (error, stdout, stderr) => {
     if (error) {
       console.error(
         `exec error: ${error}\nstdout: ${stdout}\nstderr: ${stderr}`,
