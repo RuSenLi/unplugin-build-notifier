@@ -2,7 +2,9 @@
 
 [![NPM version](https://img.shields.io/npm/v/unplugin-build-notifier?color=a1b858&label=)](https://www.npmjs.com/package/unplugin-build-notifier)
 
-在使用此插件完成项目打包后，您将收到系统通知，并可以根据配置执行一些脚本，例如默认打开当前项目根目录的文件资源管理器。
+[English](README.md) | 中文
+
+系统通知构建结果，自动打开项目根目录。
 
 <br>
 
@@ -64,7 +66,6 @@ export default {
 ```
 
 <br></details>
-
 
 <details>
 <summary>Webpack</summary><br>

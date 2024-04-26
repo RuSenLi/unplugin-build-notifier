@@ -2,9 +2,9 @@
 
 [![NPM version](https://img.shields.io/npm/v/unplugin-build-notifier?color=a1b858&label=)](https://www.npmjs.com/package/unplugin-build-notifier)
 
-[English](README.md) | [中文](README.zh-CN.md)
+English | [中文](README.zh-CN.md)
 
-After packaging the project using this plugin, you will receive system notifications and can execute some scripts according to the configuration, such as opening the file explorer in the current project root directory by default.
+System notification of build results, automatically opens the project root directory.
 
 <br>
 
